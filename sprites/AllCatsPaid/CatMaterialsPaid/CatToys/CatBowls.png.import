@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://ciw8uem7aj83l"
+=======
+uid="uid://c8prb3bchkrra"
+>>>>>>> d621b3437d2f8835e47d9fbb4504992141283d2e
 path="res://.godot/imported/CatBowls.png-1387f39c5987e383d85f9682164308af.ctex"
 metadata={
 "vram_texture": false

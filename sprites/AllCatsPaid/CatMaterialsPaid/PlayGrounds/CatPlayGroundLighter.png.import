@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://du5gplj0ibivi"
+=======
+uid="uid://gb3xv3oh4h32"
+>>>>>>> d621b3437d2f8835e47d9fbb4504992141283d2e
 path="res://.godot/imported/CatPlayGroundLighter.png-3e6afc4defde2d45c4ec8ca325f93c61.ctex"
 metadata={
 "vram_texture": false

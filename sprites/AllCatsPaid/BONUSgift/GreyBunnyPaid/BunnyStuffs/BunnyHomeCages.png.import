@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://bjakgroxskxpl"
+=======
+uid="uid://dqvf5v5m2abk6"
+>>>>>>> d621b3437d2f8835e47d9fbb4504992141283d2e
 path="res://.godot/imported/BunnyHomeCages.png-93ab837ae532522d11bcbfe1725be3bc.ctex"
 metadata={
 "vram_texture": false

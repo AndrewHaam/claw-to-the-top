@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://cbgknf0dilyjw"
+=======
+uid="uid://bl4r1yt37btpa"
+>>>>>>> d621b3437d2f8835e47d9fbb4504992141283d2e
 path="res://.godot/imported/BunnyVitamins.png-8c0bfe973e4154f59cb087a890c76f1c.ctex"
 metadata={
 "vram_texture": false

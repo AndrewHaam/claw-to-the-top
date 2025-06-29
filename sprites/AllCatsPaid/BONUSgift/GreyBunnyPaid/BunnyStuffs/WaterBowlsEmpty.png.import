@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://dtml1qeqidg53"
+=======
+uid="uid://cc845i2jnc5ns"
+>>>>>>> d621b3437d2f8835e47d9fbb4504992141283d2e
 path="res://.godot/imported/WaterBowlsEmpty.png-e9447a3a2429607cfa539d59238e1553.ctex"
 metadata={
 "vram_texture": false

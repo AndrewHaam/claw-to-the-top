@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://b8k5d1i04080i"
+=======
+uid="uid://dbk4gsfq7v51t"
+>>>>>>> d621b3437d2f8835e47d9fbb4504992141283d2e
 path="res://.godot/imported/PinkBall-Sheet.png-e6ed5796722352e9b4300e1b5747f8b1.ctex"
 metadata={
 "vram_texture": false

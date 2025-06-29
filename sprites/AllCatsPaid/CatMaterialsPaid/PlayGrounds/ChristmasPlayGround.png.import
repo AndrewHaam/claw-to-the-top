@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://e6xhulcvvcp8"
+=======
+uid="uid://dbj7qu8kq20uh"
+>>>>>>> d621b3437d2f8835e47d9fbb4504992141283d2e
 path="res://.godot/imported/ChristmasPlayGround.png-b64cd41eb780053d0b90a349c3eb76a6.ctex"
 metadata={
 "vram_texture": false

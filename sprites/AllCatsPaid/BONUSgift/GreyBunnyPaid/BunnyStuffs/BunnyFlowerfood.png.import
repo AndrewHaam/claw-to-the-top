@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://chn64stakh61"
+=======
+uid="uid://cpj2hphmomfn8"
+>>>>>>> d621b3437d2f8835e47d9fbb4504992141283d2e
 path="res://.godot/imported/BunnyFlowerfood.png-b2e51713f240804e9b0042bb2e2b1de9.ctex"
 metadata={
 "vram_texture": false

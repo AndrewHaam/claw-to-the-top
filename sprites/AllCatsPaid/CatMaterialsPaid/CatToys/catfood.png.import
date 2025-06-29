@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://dyhqj0bqv73tb"
+=======
+uid="uid://cpy1741t2321s"
+>>>>>>> d621b3437d2f8835e47d9fbb4504992141283d2e
 path="res://.godot/imported/catfood.png-fe778513bb22c32f2293f483cb574a98.ctex"
 metadata={
 "vram_texture": false

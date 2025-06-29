@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bm0a2w1ebxt8t"]
+
+[ext_resource type="Texture2D" uid="uid://86p4uvf6pblj" path="res://background/New free backgrounds part1/background 1/1.png" id="1_y0upk"]
+[ext_resource type="PackedScene" uid="uid://wtluu8cmciag" path="res://scenes/player_cat.tscn" id="2_jougr"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cbsqf"]
+normal = Vector2(-0.0148132, -0.99989)
+distance = 12.9704
+
+[node name="Node2D" type="Node2D"]
+
+[node name="1" type="Sprite2D" parent="."]
+position = Vector2(247, 163)
+texture = ExtResource("1_y0upk")
+
+[node name="PlayerCat" parent="." instance=ExtResource("2_jougr")]
+position = Vector2(284, 83)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(297, 343)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_cbsqf")
+one_way_collision_margin = 93.8
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(254, 158)

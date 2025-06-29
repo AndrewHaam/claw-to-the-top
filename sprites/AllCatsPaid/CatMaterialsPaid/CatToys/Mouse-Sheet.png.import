@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://dbnb11fp75obx"
+=======
+uid="uid://dk2bgkwefxyvg"
+>>>>>>> d621b3437d2f8835e47d9fbb4504992141283d2e
 path="res://.godot/imported/Mouse-Sheet.png-80411b92d81c34193993ad94c630e82a.ctex"
 metadata={
 "vram_texture": false
