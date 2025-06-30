@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://vorikrm27wkj"]
+[gd_scene load_steps=29 format=3 uid="uid://cks13syw4pyn4"]
 
 [ext_resource type="Texture2D" uid="uid://4dh0ljxf35s4" path="res://background/free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 1/1.png" id="1_78l40"]
 [ext_resource type="Texture2D" uid="uid://cwduo4cpnrfuw" path="res://background/free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 1/3.png" id="2_3ustv"]
@@ -25,7 +25,11 @@
 [ext_resource type="Texture2D" uid="uid://b66yxpmgexu04" path="res://background/free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 4/2.png" id="22_eja3j"]
 [ext_resource type="Texture2D" uid="uid://cwmbwder3wua5" path="res://background/free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 4/3.png" id="23_ffbh0"]
 [ext_resource type="Texture2D" uid="uid://nvbru28oh5un" path="res://background/free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 4/4.png" id="24_4xikj"]
+[ext_resource type="PackedScene" uid="uid://wtluu8cmciag" path="res://scenes/player_cat.tscn" id="27_1id6s"]
 [ext_resource type="Texture2D" uid="uid://c0lhqm7dn6gm8" path="res://background/New free backgrounds part1/background 3/1.png" id="28_t3aa1"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1id6s"]
+distance = -1243.0
 
 [node name="1" type="Sprite2D"]
 position = Vector2(308, -225)
@@ -326,6 +330,10 @@ position = Vector2(0, -3802)
 rotation = 3.14159
 texture = ExtResource("20_umuqj")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(26, -1783)
+zoom = Vector2(2, 2)
+
 [node name="68" type="Sprite2D" parent="."]
 position = Vector2(0, -3845)
 rotation = 3.14159
@@ -335,3 +343,16 @@ texture = ExtResource("20_umuqj")
 position = Vector2(0, -3856)
 rotation = 3.14159
 texture = ExtResource("20_umuqj")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(26, -1783)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_1id6s")
+
+[node name="PlayerCat" parent="." instance=ExtResource("27_1id6s")]
+z_index = 100
+position = Vector2(26, -1783)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PlayerCat"]
+remote_path = NodePath("../../Camera2D")
