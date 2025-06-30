@@ -1,9 +1,9 @@
-[gd_scene load_steps=41 format=3 uid="uid://wtluu8cmciag"]
+[gd_scene load_steps=45 format=3 uid="uid://wtluu8cmciag"]
 
 [ext_resource type="Script" uid="uid://ccdb0vxxb7bex" path="res://scenes/player_cat.gd" id="1_8lsy4"]
-[ext_resource type="Texture2D" uid="uid://c7r1u1aj6we68" path="res://sprites/AllCatsPaid/CatClassical/BlackCollor/Idle2Catt.png" id="1_vkel5"]
-[ext_resource type="Texture2D" uid="uid://8jk8g0pp8j55" path="res://sprites/AllCatsPaid/CatClassical/BlackCollor/JumpCattt.png" id="2_o2jfq"]
-[ext_resource type="Texture2D" uid="uid://cgbrm6jdr5tuy" path="res://sprites/AllCatsPaid/CatClassical/BlackCollor/RunCatt.png" id="4_pru70"]
+[ext_resource type="Texture2D" uid="uid://bib450xdq32bm" path="res://sprites/AllCatsPaid/CatClassical/BlackCollor/Idle2Catt.png" id="1_vkel5"]
+[ext_resource type="Texture2D" uid="uid://dbrjer6ruusqt" path="res://sprites/AllCatsPaid/CatClassical/BlackCollor/JumpCattt.png" id="2_o2jfq"]
+[ext_resource type="Texture2D" uid="uid://dk7a4j2s0fgnh" path="res://sprites/AllCatsPaid/CatClassical/BlackCollor/RunCatt.png" id="4_pru70"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j0aaq"]
 atlas = ExtResource("1_vkel5")
@@ -60,10 +60,6 @@ region = Rect2(384, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_ny3i5"]
 atlas = ExtResource("1_vkel5")
 region = Rect2(416, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1ij7m"]
-atlas = ExtResource("2_o2jfq")
-region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_81op5"]
 atlas = ExtResource("2_o2jfq")
@@ -192,9 +188,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1ij7m")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_81op5")
 }, {
 "duration": 1.0,
@@ -230,9 +223,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bdwle")
 }],
-"loop": true,
+"loop": false,
 "name": &"jump",
-"speed": 10.0
+"speed": 11.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -264,16 +257,144 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_8lsy4"]
 radius = 6.0
 
+[sub_resource type="Animation" id="Animation_8lsy4"]
+resource_name = "idle"
+length = 1.40001
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.745554, 0.77698, 1.37836),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [&"idle", &"idle", &"idle", &"idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+}
+
+[sub_resource type="Animation" id="Animation_pru70"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_h7v4t"]
+resource_name = "run"
+length = 0.400007
+loop_mode = 1
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"run"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 3, 4, 5, 6]
+}
+
+[sub_resource type="Animation" id="Animation_67m3y"]
+resource_name = "jump"
+length = 1.09092
+loop_mode = 1
+step = 0.0909091
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"jump"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0907701, 0.181818, 0.272727, 0.363636, 0.454545, 0.545455, 0.636364, 0.727273, 0.818182, 0.909091, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h7v4t"]
+_data = {
+&"RESET": SubResource("Animation_pru70"),
+&"idle": SubResource("Animation_8lsy4"),
+&"jump": SubResource("Animation_67m3y"),
+&"run": SubResource("Animation_h7v4t")
+}
+
 [node name="PlayerCat" type="CharacterBody2D"]
 script = ExtResource("1_8lsy4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hmnf2")
 animation = &"idle"
-frame_progress = 0.340647
+frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 5)
 shape = SubResource("CircleShape2D_8lsy4")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_h7v4t")
+}
