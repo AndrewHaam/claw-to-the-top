@@ -255,7 +255,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8lsy4"]
-size = Vector2(16, 11)
+size = Vector2(16, 12)
 
 [sub_resource type="Animation" id="Animation_pru70"]
 length = 0.001
@@ -383,6 +383,9 @@ _data = {
 }
 
 [node name="PlayerCat" type="CharacterBody2D"]
+floor_stop_on_slope = false
+floor_constant_speed = true
+floor_max_angle = 0.523599
 script = ExtResource("1_8lsy4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -391,7 +394,7 @@ animation = &"idle"
 frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 8.5)
+position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_8lsy4")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
