@@ -14,6 +14,7 @@ extends CharacterBody2D
 @onready var fall_gravity : float = ((2.0 * jump_height) / (jump_time_to_descent * jump_time_to_descent))
 @onready var coefficient = (min_jump_height - max_jump_height)/max_time_held
 
+#if you want to change horizontal speed
 const SPEED = 150.0
 
 #var jump_velocity : float = -300.0
@@ -33,7 +34,6 @@ func get_jump_height(delta):
 		print("Spacebar is being held down")
 		is_holding = true
 		time_held = 0.0  # reset timer on press
-		#jump_velocity = -300.0
 	if is_holding:
 		time_held += delta  # accumulate time while holding
 	#print(coefficient)
@@ -49,6 +49,9 @@ func get_jump_height(delta):
 
 
 func _physics_process(delta: float) -> void:
+	
+	if velocity.y > 600:
+		velocity.y = 600
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += modified_get_gravity() * delta
