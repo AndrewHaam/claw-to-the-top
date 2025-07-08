@@ -4400,7 +4400,6 @@ shape = SubResource("WorldBoundaryShape2D_1id6s")
 z_index = 100
 
 position = Vector2(95, -702)
-max_time_held = 2.5
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PlayerCat"]
 remote_path = NodePath("../../Camera2D")
