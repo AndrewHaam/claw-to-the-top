@@ -4375,7 +4375,7 @@ rotation = 3.14159
 texture = ExtResource("20_umuqj")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(26, -1783)
+position = Vector2(95, -702)
 zoom = Vector2(2, 2)
 
 [node name="68" type="Sprite2D" parent="."]
@@ -4396,7 +4396,8 @@ shape = SubResource("WorldBoundaryShape2D_1id6s")
 
 [node name="PlayerCat" parent="." instance=ExtResource("27_1id6s")]
 z_index = 100
-position = Vector2(26, -1783)
+position = Vector2(95, -702)
+max_time_held = 2.5
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PlayerCat"]
 remote_path = NodePath("../../Camera2D")

@@ -387,6 +387,11 @@ floor_stop_on_slope = false
 floor_constant_speed = true
 floor_max_angle = 0.523599
 script = ExtResource("1_8lsy4")
+max_time_held = 2.5
+min_jump_height = 50.0
+max_jump_height = 100.0
+jump_time_to_peak = 0.4
+jump_time_to_descent = 0.3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hmnf2")
