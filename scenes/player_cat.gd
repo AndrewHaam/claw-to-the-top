@@ -21,7 +21,7 @@ const SPEED = 150.0
 
 var is_holding : bool = false
 var time_held : float
-var current_direction : float
+var current_direction : float = 1
 
 func modified_get_gravity() -> Vector2:
 	if velocity.y < 0:
@@ -35,8 +35,7 @@ func get_jump_height(delta):
 		is_holding = true
 		time_held = 0.0  # reset timer on press
 	if is_holding:
-		time_held += delta  # accumulate time while holding
-	#print(coefficient)
+		time_held += delta  # accumulate time while holdingx
 	if Input.is_action_just_released("jump"):
 		is_holding = false
 		if time_held >= max_time_held:
@@ -55,7 +54,6 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += modified_get_gravity() * delta
-
 	# Handle jump.
 	get_jump_height(delta)
 	if Input.is_action_just_released("jump") and is_on_floor():
@@ -64,24 +62,25 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("ui_left", "ui_right")
-
-	if is_holding:
+	
+	if is_holding and is_on_floor():
 		# Prevent movement input while charging jump
 		anim.play("idle")
 		direction = 0
 		velocity.x = 0
 	else:
-		if direction != 0 and is_on_floor():
-			current_direction = direction
-
 		if direction and is_on_floor():
 			anim.play("run")
 			velocity.x = direction * SPEED
+			current_direction = direction
 		else:
 			if is_on_floor():
 				velocity.x = move_toward(velocity.x, 0, SPEED)
 				anim.play("idle")
 			else:
+				print(velocity.x)
+				if velocity.x == 0:
+					current_direction *= -1
 				velocity.x = current_direction * SPEED
 				anim.play("jump")
 
