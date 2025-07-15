@@ -22,8 +22,8 @@ var in_air: bool = false
 var time_held : float
 var direction = Input.get_axis("ui_left", "ui_right")
 var current_direction : float = 1
-
-
+var fall_played = false
+var squat_played = false
 func modified_get_gravity() -> Vector2:
 	if velocity.y < 0:
 		return Vector2(0, jump_gravity)
@@ -31,15 +31,22 @@ func modified_get_gravity() -> Vector2:
 		return Vector2(0, fall_gravity)
 
 func get_animation():
+	
 	if is_on_floor():
-		if is_holding:
-			anim.play("charge")
+		fall_played = false
+		if Input.is_action_just_released("jump"):
+			anim.play("jump")
+		elif is_holding && !squat_played:
+			anim.play("squat")
+			#squat_played = true
 		elif direction:
 			anim.play("run")
 		else: 
 			anim.play("idle")
 	else:
-		anim.play("jump")
+		if velocity.y >= 0 && !fall_played:
+			anim.play("fall")
+			fall_played = true
 	
 	if velocity.x > 0:
 		$AnimatedSprite2D.flip_h = false
@@ -68,6 +75,7 @@ func get_jump_height(delta):
 	if is_holding:
 		time_held += delta  # accumulate time while holdingx
 	if Input.is_action_just_released("jump"):
+		#anim.play("jump")
 		is_holding = false
 		in_air = true
 		if time_held >= max_time_held:
@@ -79,7 +87,7 @@ func get_jump_height(delta):
 		#print("Space was held for ", time_held, " seconds")
 
 func _physics_process(delta: float) -> void:
-
+	get_animation()
 	if velocity.y > 600:
 		velocity.y = 600
 	# Add the gravity.
@@ -93,8 +101,9 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_released("jump") and is_on_floor():
 		velocity.y = jump_velocity
 		velocity.x = SPEED * current_direction
-		print("velocity.x = ", velocity.x)
+		#anim.play("jump")
+		#print("velocity.x = ", velocity.x)
 	
-	get_animation()
+
 	
 	move_and_slide()
