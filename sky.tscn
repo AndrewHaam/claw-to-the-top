@@ -46,7 +46,7 @@
 [ext_resource type="Texture2D" uid="uid://beqxjkybn8s2q" path="res://sprites/craftpix-net-654794-dump-2d-tileset-pixel-art/2 Background/Night/5.png" id="41_sb86i"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1id6s"]
-distance = -2301.0
+distance = -1622.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p1akp"]
 texture = ExtResource("28_sb86i")
