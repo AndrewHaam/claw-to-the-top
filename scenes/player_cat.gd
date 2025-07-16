@@ -13,6 +13,9 @@ extends CharacterBody2D
 @onready var jump_gravity : float = ((2.0 * jump_height) / (jump_time_to_peak * jump_time_to_peak))
 @onready var fall_gravity : float = ((2.0 * jump_height) / (jump_time_to_descent * jump_time_to_descent))
 @onready var coefficient = (min_jump_height - max_jump_height)/max_time_held
+@onready var actionable_finder: Area2D = $Direction/ActionableFinder
+
+
 
 #if you want to change horizontal speed
 const SPEED = 150.0
@@ -29,6 +32,32 @@ func modified_get_gravity() -> Vector2:
 		return Vector2(0, jump_gravity)
 	else:
 		return Vector2(0, fall_gravity)
+
+#this is used to talk dont delete
+func _unhandled_input(_event: InputEvent) -> void:
+	if Input.is_action_just_pressed("interact"):
+		var actionables = actionable_finder.get_overlapping_areas()
+		if actionables. size () > 0:
+			actionables[0].action ()
+			return
+
+#this is to make sure i can't move while talking
+#var can_move := true
+#func _process(delta):
+	#if can_move:
+		# add like the movement shit here ??? 
+
+#func _ready():
+	#if DialogueManager:
+		#DialogueManager.dialogue_started.connect(_on_dialogue_started)
+		#DialogueManager.dialogue_ended.connect(_on_dialogue_ended)
+
+#func _on_dialogue_started(_resource, _start_id):
+	#can_move = false
+
+#func _on_dialogue_ended():
+	#can_move = true
+
 
 func get_animation():
 	
