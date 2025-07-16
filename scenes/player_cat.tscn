@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://wtluu8cmciag"]
+[gd_scene load_steps=44 format=3 uid="uid://wtluu8cmciag"]
 
 [ext_resource type="Script" uid="uid://ccdb0vxxb7bex" path="res://scenes/player_cat.gd" id="1_8lsy4"]
 [ext_resource type="Texture2D" uid="uid://bib450xdq32bm" path="res://sprites/AllCatsPaid/CatClassical/BlackCollor/Idle2Catt.png" id="1_vkel5"]
@@ -378,6 +378,9 @@ _data = {
 &"run": SubResource("Animation_h7v4t")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_pru70"]
+radius = 19.0
+
 [node name="PlayerCat" type="CharacterBody2D"]
 floor_stop_on_slope = false
 floor_constant_speed = true
@@ -395,6 +398,7 @@ animation = &"idle"
 frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-1, 6)
 shape = SubResource("CircleShape2D_8lsy4")
 
@@ -402,3 +406,13 @@ shape = SubResource("CircleShape2D_8lsy4")
 libraries = {
 &"": SubResource("AnimationLibrary_h7v4t")
 }
+
+[node name="Direction" type="Marker2D" parent="."]
+
+[node name="ActionableFinder" type="Area2D" parent="Direction"]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/ActionableFinder"]
+position = Vector2(16, 1)
+shape = SubResource("CircleShape2D_pru70")
