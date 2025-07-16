@@ -79,8 +79,8 @@ func _physics_process(delta: float) -> void:
 				anim.play("idle")
 			else:
 				print(velocity.x)
-				if velocity.x == 0:
-					current_direction *= -1
+				#if velocity.x == 0:
+					#current_direction *= -1
 				velocity.x = current_direction * SPEED
 				anim.play("jump")
 
