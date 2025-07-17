@@ -4079,7 +4079,7 @@ sources/11 = SubResource("TileSetAtlasSource_v1pd6")
 sources/12 = SubResource("TileSetAtlasSource_3sntr")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ir76b"]
-radius = 29.0172
+radius = 56.0357
 
 [node name="1" type="Sprite2D"]
 position = Vector2(308, -225)
@@ -4488,5 +4488,5 @@ position = Vector2(-132, -1374)
 dialogue_resource = ExtResource("47_wkto1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KingKitty/Actionable"]
-position = Vector2(8, -1)
+position = Vector2(35, 0)
 shape = SubResource("CircleShape2D_ir76b")
