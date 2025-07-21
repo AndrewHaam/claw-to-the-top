@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bib450xdq32bm" path="res://sprites/AllCatsPaid/CatClassical/BlackCollor/Idle2Catt.png" id="1_vkel5"]
 [ext_resource type="Texture2D" uid="uid://dbrjer6ruusqt" path="res://sprites/AllCatsPaid/CatClassical/BlackCollor/JumpCattt.png" id="2_o2jfq"]
 [ext_resource type="Texture2D" uid="uid://dk7a4j2s0fgnh" path="res://sprites/AllCatsPaid/CatClassical/BlackCollor/RunCatt.png" id="4_pru70"]
+[ext_resource type="Texture2D" uid="uid://bmvdfgiqum51b" path="res://sprites/AllCatsPaid/CatClassical/BlackCollor/squat.png" id="5_pru70"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_81op5"]
 atlas = ExtResource("2_o2jfq")
@@ -118,16 +119,12 @@ atlas = ExtResource("4_pru70")
 region = Rect2(192, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1ij7m"]
-atlas = ExtResource("2_o2jfq")
+atlas = ExtResource("5_pru70")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pru70"]
-atlas = ExtResource("2_o2jfq")
+[sub_resource type="AtlasTexture" id="AtlasTexture_htuab"]
+atlas = ExtResource("5_pru70")
 region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8lsy4"]
-atlas = ExtResource("2_o2jfq")
-region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hmnf2"]
 animations = [{
@@ -240,10 +237,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_1ij7m")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pru70")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8lsy4")
+"texture": SubResource("AtlasTexture_htuab")
 }],
 "loop": false,
 "name": &"squat",
