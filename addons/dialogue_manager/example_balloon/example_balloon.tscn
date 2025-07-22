@@ -122,10 +122,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -290.5
-offset_top = -35.0
-offset_right = 290.5
-offset_bottom = 35.0
+offset_left = 242.0
+offset_top = 70.0
+offset_right = 543.0
+offset_bottom = 140.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 8
@@ -136,6 +136,7 @@ response_template = NodePath("ResponseExample")
 
 [node name="ResponseExample" type="Button" parent="Balloon/ResponsesMenu"]
 layout_mode = 2
+size_flags_vertical = 3
 text = "Response example"
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
