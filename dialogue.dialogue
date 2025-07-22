@@ -1,0 +1,10 @@
+~ start
+King Kitty: [speed=0.5] You again, Scraps? [wait=0.4] I’m still wearin’ the Crown of Cans. [wait=0.3]Think you’re ready to dethrone me?
+- Get fired up
+	Scraps: [speed=0.5] Your time’s up, King Kitty. I’m taking that crown and every last dumpster with it!
+- I'm chillin like a villian
+	Scraps: [speed=0.5] I'm just here to climb King Kitty, I don't want no beef, just tuna.
+King Kitty: This crown ain’t just shiny lids, Scraps.[wait=0.5] It’s respect. First pick of the garbage. Total dumpster dominion. 
+Scraps: Then maybe it’s time Alleytown had a new ruler, one who doesn’t hog all the fish guts.
+King Kitty: Big meow from a little cat. Go on then, climb! But this trash mountain only makes kings or compost.
+=> END!

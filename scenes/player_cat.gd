@@ -65,14 +65,18 @@ func get_animation():
 		fall_played = false
 		if Input.is_action_just_released("jump"):
 			anim.play("jump")
-		elif is_holding && !squat_played:
+			squat_played = false
+		elif squat_played:
+			return
+		elif is_holding:
 			anim.play("squat")
-			#squat_played = true
+			squat_played = true
 		elif direction:
 			anim.play("run")
 		else: 
 			anim.play("idle")
 	else:
+		squat_played = false
 		if velocity.y >= 0 && !fall_played:
 			anim.play("fall")
 			fall_played = true
