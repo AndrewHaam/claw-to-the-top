@@ -10,6 +10,8 @@ extends CanvasLayer
 ## The dialogue resource
 var resource: DialogueResource
 
+## 
+
 ## Temporary game states
 var temporary_game_states: Array = []
 
