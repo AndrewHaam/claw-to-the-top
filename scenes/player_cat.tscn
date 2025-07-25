@@ -245,6 +245,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8lsy4"]
+custom_solver_bias = 1.0
 radius = 8.0
 
 [sub_resource type="Animation" id="Animation_pru70"]
@@ -378,7 +379,7 @@ radius = 19.0
 [node name="PlayerCat" type="CharacterBody2D"]
 floor_stop_on_slope = false
 floor_constant_speed = true
-floor_max_angle = 0.523599
+floor_max_angle = 0.349066
 script = ExtResource("1_8lsy4")
 max_time_held = 2.5
 min_jump_height = 50.0

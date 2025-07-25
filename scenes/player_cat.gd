@@ -6,6 +6,14 @@ extends CharacterBody2D
 @export var jump_time_to_peak : float
 @export var jump_time_to_descent : float
 
+#@export var camera_height : int = 400
+#@export var camera_limit_lower : int = 400
+#@export var camera_limit_upper : int = 0
+@export var camera_height : int = 200
+@export var camera_limit_lower : int = 527
+@export var camera_limit_upper : int = 196
+
+signal change_camera_pos
 
 @onready var anim = $AnimatedSprite2D
 @onready var jump_height : float = min_jump_height
@@ -19,7 +27,6 @@ extends CharacterBody2D
 
 #if you want to change horizontal speed
 const SPEED = 150.0
-
 var is_holding : bool = false
 var in_air: bool = false
 var time_held : float
@@ -119,6 +126,21 @@ func get_jump_height(delta):
 		#print("JUMP_VELOCITY IS: ", jump_velocity)
 		#print("Space was held for ", time_held, " seconds")
 
+func move_camera_to_match_player(): 
+	#print("camera_limit_lower: ", camera_limit_lower, " | camera_limit_upper: ", camera_limit_upper)
+	if position.y < camera_limit_upper:
+		print(position.y)
+		camera_limit_lower -= camera_height
+		camera_limit_upper -= camera_height
+		print("camera_limit_lower: ", camera_limit_lower, " | camera_limit_upper: ", camera_limit_upper)
+		change_camera_pos.emit(-camera_height)
+	
+	elif position.y > camera_limit_lower:
+		camera_limit_lower += camera_height
+		camera_limit_upper += camera_height
+		print("camera_limit_lower: ", camera_limit_lower, " | camera_limit_upper: ", camera_limit_upper)
+		change_camera_pos.emit(+camera_height)
+		
 func _physics_process(delta: float) -> void:
 	get_animation()
 	if velocity.y > 600:
@@ -138,5 +160,9 @@ func _physics_process(delta: float) -> void:
 		#print("velocity.x = ", velocity.x)
 	
 
-	
+	move_camera_to_match_player()
 	move_and_slide()
+
+
+func _on_change_camera_pos() -> void:
+	pass # Replace with function body.
