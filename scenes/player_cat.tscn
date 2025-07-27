@@ -1,10 +1,11 @@
-[gd_scene load_steps=44 format=3 uid="uid://wtluu8cmciag"]
+[gd_scene load_steps=45 format=3 uid="uid://wtluu8cmciag"]
 
 [ext_resource type="Script" uid="uid://ccdb0vxxb7bex" path="res://scenes/player_cat.gd" id="1_8lsy4"]
 [ext_resource type="Texture2D" uid="uid://bib450xdq32bm" path="res://sprites/AllCatsPaid/CatClassical/BlackCollor/Idle2Catt.png" id="1_vkel5"]
 [ext_resource type="Texture2D" uid="uid://dbrjer6ruusqt" path="res://sprites/AllCatsPaid/CatClassical/BlackCollor/JumpCattt.png" id="2_o2jfq"]
 [ext_resource type="Texture2D" uid="uid://dk7a4j2s0fgnh" path="res://sprites/AllCatsPaid/CatClassical/BlackCollor/RunCatt.png" id="4_pru70"]
 [ext_resource type="Texture2D" uid="uid://bmvdfgiqum51b" path="res://sprites/AllCatsPaid/CatClassical/BlackCollor/squat.png" id="5_pru70"]
+[ext_resource type="AudioStream" uid="uid://b24o3dcdf7o2g" path="res://sound/swing-whoosh-110410.mp3" id="6_h7v4t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_81op5"]
 atlas = ExtResource("2_o2jfq")
@@ -245,6 +246,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8lsy4"]
+custom_solver_bias = 1.0
 radius = 8.0
 
 [sub_resource type="Animation" id="Animation_pru70"]
@@ -378,7 +380,7 @@ radius = 19.0
 [node name="PlayerCat" type="CharacterBody2D"]
 floor_stop_on_slope = false
 floor_constant_speed = true
-floor_max_angle = 0.523599
+floor_max_angle = 0.0
 script = ExtResource("1_8lsy4")
 max_time_held = 2.5
 min_jump_height = 50.0
@@ -392,7 +394,6 @@ animation = &"idle"
 frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(-1, 6)
 shape = SubResource("CircleShape2D_8lsy4")
 
@@ -410,3 +411,7 @@ collision_mask = 16
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/ActionableFinder"]
 position = Vector2(16, 1)
 shape = SubResource("CircleShape2D_pru70")
+
+[node name="sfx_jump" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_h7v4t")
+volume_db = 8.419
