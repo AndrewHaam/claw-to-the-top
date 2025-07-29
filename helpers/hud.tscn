@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://xejg0auvh1cb"]
+
+[ext_resource type="Script" uid="uid://d3qwko6bywolv" path="res://helpers/hud.gd" id="1_52org"]
+
+[node name="Hud" type="Control" node_paths=PackedStringArray("stopwatch_label", "progress_label")]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+script = ExtResource("1_52org")
+stopwatch_label = NodePath("StopwatchLabel")
+progress_label = NodePath("ProgressLabel")
+
+[node name="StopwatchLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -64.0
+offset_bottom = 27.0
+grow_horizontal = 0
+text = "00:00:00"
+
+[node name="ProgressLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_top = 20.0
+offset_bottom = 43.0
+grow_horizontal = 0
+text = "0%"
+horizontal_alignment = 2
