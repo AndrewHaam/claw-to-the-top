@@ -21,8 +21,6 @@ signal change_camera_pos
 @onready var actionable_finder: Area2D = $Direction/ActionableFinder
 @onready var sfx_jump = $sfx_jump
 
-#@onready var balloon_node = get_node("res://addons/dialogue_manager/example_balloon/example_balloon.tscn")
-
 const SPEED = 150.0
 var is_holding : bool = false
 var in_air: bool = false
