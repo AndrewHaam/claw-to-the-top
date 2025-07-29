@@ -21,6 +21,8 @@ signal change_camera_pos
 @onready var actionable_finder: Area2D = $Direction/ActionableFinder
 @onready var sfx_jump = $sfx_jump
 
+#@onready var balloon_node = get_node("res://addons/dialogue_manager/example_balloon/example_balloon.tscn")
+
 const SPEED = 150.0
 var is_holding : bool = false
 var in_air: bool = false
@@ -30,19 +32,6 @@ var current_direction : float = 1
 var fall_played = false
 var squat_played = false
 var can_move := true
-
-func _ready():
-	# Replace the path below with your actual Balloon node path!
-	var balloon = get_node("/root/MainScene/UI/Balloon") 
-	if balloon:
-		balloon.connect("dialogue_started", Callable(self, "_on_dialogue_started"))
-		balloon.connect("dialogue_finished", Callable(self, "_on_dialogue_finished"))
-
-func _on_dialogue_started():
-	can_move = false
-
-func _on_dialogue_finished():
-	can_move = true
 
 func _unhandled_input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("interact"):
