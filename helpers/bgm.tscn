@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtrc86irxbjto"]
+
+[ext_resource type="AudioStream" uid="uid://ds8045uk33mna" path="res://sound/Chiptune Lo-fi & 8-Bit Gaming _ Playlist  #8bit   #chiptune   #chipmusic.mp3" id="1_dxhws"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_dxhws")
+autoplay = true

@@ -21,6 +21,8 @@ signal change_camera_pos
 @onready var actionable_finder: Area2D = $Direction/ActionableFinder
 @onready var sfx_jump = $sfx_jump
 
+
+
 const SPEED = 150.0
 var is_holding : bool = false
 var in_air: bool = false
@@ -32,6 +34,7 @@ var squat_played = false
 var can_move := true
 
 func _ready():
+	add_to_group("player")
 	# Replace the path below with your actual Balloon node path!
 	var balloon = get_node("/root/MainScene/UI/Balloon") 
 	if balloon:
