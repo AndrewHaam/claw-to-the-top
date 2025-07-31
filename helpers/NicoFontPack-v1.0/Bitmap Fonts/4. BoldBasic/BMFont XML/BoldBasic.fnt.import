@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://boqfb0apf0clg"
+path="res://.godot/imported/BoldBasic.fnt-43471fbc2d27e3d2577ee71d60cae59d.fontdata"
+
+[deps]
+
+source_file="res://helpers/NicoFontPack-v1.0/Bitmap Fonts/4. BoldBasic/BMFont XML/BoldBasic.fnt"
+dest_files=["res://.godot/imported/BoldBasic.fnt-43471fbc2d27e3d2577ee71d60cae59d.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

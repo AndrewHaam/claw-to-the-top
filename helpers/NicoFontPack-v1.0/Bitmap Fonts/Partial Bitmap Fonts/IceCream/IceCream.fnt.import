@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://eth2nf3a7tfs"
+path="res://.godot/imported/IceCream.fnt-e86bbf6e6207ccd45013bfb9276cf98b.fontdata"
+
+[deps]
+
+source_file="res://helpers/NicoFontPack-v1.0/Bitmap Fonts/Partial Bitmap Fonts/IceCream/IceCream.fnt"
+dest_files=["res://.godot/imported/IceCream.fnt-e86bbf6e6207ccd45013bfb9276cf98b.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2
