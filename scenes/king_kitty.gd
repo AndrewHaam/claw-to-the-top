@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var anim = $AnimatedSprite2D
+
 @onready var interact_label = $InteractLabel
 @onready var interaction_area = $InteractionArea
 
@@ -19,3 +20,8 @@ func _on_body_exited(body):
 	if body is PlayerCat:
 		interact_label.visible = false
 		has_interacted = false  # Reset so it can show again next time
+
+
+func _ready() -> void:
+	anim.play("idle")
+
