@@ -157,3 +157,11 @@ func _physics_process(delta: float) -> void:
 
 func _on_change_camera_pos() -> void:
 	pass # Replace with function body.
+
+
+func _on_actionable_dialogue_finished() -> void:
+	can_move = false # Replace with function body.
+
+
+func _on_actionable_dialogue_started() -> void:
+	can_move = false

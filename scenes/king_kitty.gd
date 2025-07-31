@@ -11,6 +11,7 @@ func _ready():
 	interact_label.visible = false
 	interaction_area.body_entered.connect(_on_body_entered)
 	interaction_area.body_exited.connect(_on_body_exited)
+	anim.play("idle")
 
 func _on_body_entered(body):
 	if body is PlayerCat and not has_interacted:
@@ -20,8 +21,3 @@ func _on_body_exited(body):
 	if body is PlayerCat:
 		interact_label.visible = false
 		has_interacted = false  # Reset so it can show again next time
-
-
-func _ready() -> void:
-	anim.play("idle")
-
