@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dgaj3y2v6fuc4"]
+[gd_scene load_steps=10 format=3 uid="uid://dgaj3y2v6fuc4"]
 
 [ext_resource type="Script" uid="uid://vxb4lqda6aqa" path="res://pause/pause_menu.gd" id="1_8pr2g"]
 [ext_resource type="Shader" uid="uid://g8qbr5qdkp07" path="res://pause/pause_menu.gdshader" id="2_2m2aa"]
@@ -6,6 +6,12 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p81d2"]
 shader = ExtResource("2_2m2aa")
 shader_parameter/lod = 0.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8pr2g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2m2aa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3na8v"]
 
 [sub_resource type="Animation" id="Animation_d3xb4"]
 length = 0.001
@@ -164,15 +170,20 @@ layout_mode = 2
 
 [node name="Resume" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8pr2g")
 text = "Resume"
 
 [node name="Restart" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2m2aa")
 text = "Restart"
 
-[node name="Quit" type="Button" parent="PanelContainer/VBoxContainer"]
+[node name="Main Menu" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
-text = "Quit"
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3na8v")
+text = "Main Menu
+
+"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -181,4 +192,4 @@ libraries = {
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]

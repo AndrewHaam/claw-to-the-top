@@ -5729,13 +5729,16 @@ shape = SubResource("WorldBoundaryShape2D_wkto1")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 2
+layer = 10
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("48_wkto1")]
-visible = false
-offset_left = 289.0
-offset_top = -648.0
-offset_right = 289.0
-offset_bottom = -648.0
+process_priority = 1
+z_index = 500
+offset_left = 120.0
+offset_top = 64.0
+offset_right = 120.0
+offset_bottom = 64.0
+scale = Vector2(0.809632, 0.817985)
 metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
