@@ -10,7 +10,7 @@ func action() -> void:
 	dialogue_started.emit()
 	var dialog = DialogueManager. show_example_dialogue_balloon(dialogue_resource, dialogue_start)
 	var music = get_node("/root/Bgm")
-	dialog.process_mode = Node.PROCESS_MODE_ALWAYS
+	#dialog.process_mode = Node.PROCESS_MODE_ALWAYS
 	music.process_mode = Node.PROCESS_MODE_ALWAYS
 	#get_tree().paused = true
 	DialogueManager.dialogue_ended.connect(_unpause)

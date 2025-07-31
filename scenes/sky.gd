@@ -15,3 +15,7 @@ func _on_player_cat_change_camera_pos(player_pos):
 	print("b4: ", $Camera2D.position.y)
 	$Camera2D.position.y += player_pos
 	print("after: ", $Camera2D.position.y)
+
+
+func _on_actionable_dialogue_finished() -> void:
+	pass # Replace with function body.

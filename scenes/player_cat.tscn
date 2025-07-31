@@ -415,4 +415,3 @@ shape = SubResource("CircleShape2D_pru70")
 [node name="sfx_jump" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_h7v4t")
 volume_db = 8.419
-bus = &"SFX"

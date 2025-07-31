@@ -5804,4 +5804,6 @@ shape = SubResource("WorldBoundaryShape2D_lqttq")
 
 [connection signal="change_camera_pos" from="PlayerCat" to="." method="_on_player_cat_change_camera_pos"]
 [connection signal="dialogue_finished" from="KingKitty/Actionable" to="PlayerCat" method="_on_actionable_dialogue_finished"]
+[connection signal="dialogue_finished" from="KingKitty/Actionable" to="Stopwatch" method="_on_actionable_dialogue_finished"]
 [connection signal="dialogue_started" from="KingKitty/Actionable" to="PlayerCat" method="_on_actionable_dialogue_started"]
+[connection signal="dialogue_started" from="KingKitty/Actionable" to="Stopwatch" method="_on_actionable_dialogue_started"]
