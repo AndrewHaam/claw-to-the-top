@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://duo7jiyud6let"
+path="res://.godot/imported/BasicPupBlack.fnt-c53793ae8548bd9a4346d676b16d0fc4.fontdata"
+
+[deps]
+
+source_file="res://helpers/NicoFontPack-v1.0/Bitmap Fonts/1. BasicPupBlack/BMFont XML/BasicPupBlack.fnt"
+dest_files=["res://.godot/imported/BasicPupBlack.fnt-c53793ae8548bd9a4346d676b16d0fc4.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

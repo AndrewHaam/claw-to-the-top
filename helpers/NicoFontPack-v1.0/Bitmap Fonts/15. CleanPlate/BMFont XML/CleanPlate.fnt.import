@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://byvb1ntk6vse1"
+path="res://.godot/imported/CleanPlate.fnt-790ff07fc3ff2329c6b790ddc35d0fba.fontdata"
+
+[deps]
+
+source_file="res://helpers/NicoFontPack-v1.0/Bitmap Fonts/15. CleanPlate/BMFont XML/CleanPlate.fnt"
+dest_files=["res://.godot/imported/CleanPlate.fnt-790ff07fc3ff2329c6b790ddc35d0fba.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

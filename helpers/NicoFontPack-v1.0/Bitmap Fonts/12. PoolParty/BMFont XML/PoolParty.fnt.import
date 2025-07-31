@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://bwjp4ulct2ur"
+path="res://.godot/imported/PoolParty.fnt-23f229d3f769d5de36f445306ee3f447.fontdata"
+
+[deps]
+
+source_file="res://helpers/NicoFontPack-v1.0/Bitmap Fonts/12. PoolParty/BMFont XML/PoolParty.fnt"
+dest_files=["res://.godot/imported/PoolParty.fnt-23f229d3f769d5de36f445306ee3f447.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

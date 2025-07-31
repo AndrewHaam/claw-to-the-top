@@ -1,7 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://b6ecpibfwrhxx"]
+[gd_scene load_steps=21 format=3 uid="uid://b6ecpibfwrhxx"]
 
 [ext_resource type="Script" uid="uid://c2cywgn6g3l64" path="res://scenes/king_kitty.gd" id="1_0rhy7"]
 [ext_resource type="Texture2D" uid="uid://bnhy3bsvu3rra" path="res://sprites/AllCatsPaid/EgyptCatPaid/Idle2Catb.png" id="1_mb4po"]
+[ext_resource type="FontFile" uid="uid://cpouwidn7thhi" path="res://helpers/NicoFontPack-v1.0/Base Font Files/NicoBold/NicoBold-Regular.ttf" id="3_kt0d4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0rhy7"]
 atlas = ExtResource("1_mb4po")
@@ -111,6 +112,9 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8lu63"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_kt0d4"]
+radius = 52.0
+
 [node name="KingKitty" type="CharacterBody2D"]
 script = ExtResource("1_0rhy7")
 
@@ -121,5 +125,20 @@ frame = 3
 frame_progress = 0.472091
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 4)
 shape = SubResource("CircleShape2D_8lu63")
+
+[node name="InteractLabel" type="Label" parent="."]
+offset_left = -59.0
+offset_top = -31.0
+offset_right = 59.0
+offset_bottom = -15.0
+theme_override_fonts/font = ExtResource("3_kt0d4")
+text = "[E to Interact]"
+
+[node name="InteractionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(26, -1)
+shape = SubResource("CircleShape2D_kt0d4")

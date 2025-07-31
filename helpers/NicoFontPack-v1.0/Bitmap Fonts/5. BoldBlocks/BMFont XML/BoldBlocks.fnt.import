@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://7ap3jvh1lxn"
+path="res://.godot/imported/BoldBlocks.fnt-61dbb15d19f9a12300e259e287ac821b.fontdata"
+
+[deps]
+
+source_file="res://helpers/NicoFontPack-v1.0/Bitmap Fonts/5. BoldBlocks/BMFont XML/BoldBlocks.fnt"
+dest_files=["res://.godot/imported/BoldBlocks.fnt-61dbb15d19f9a12300e259e287ac821b.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

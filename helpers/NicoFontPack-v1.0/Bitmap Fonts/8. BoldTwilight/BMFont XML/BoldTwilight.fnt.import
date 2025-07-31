@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://by387hxy75tkc"
+path="res://.godot/imported/BoldTwilight.fnt-985a6d32520d2e0391840f57b30985a6.fontdata"
+
+[deps]
+
+source_file="res://helpers/NicoFontPack-v1.0/Bitmap Fonts/8. BoldTwilight/BMFont XML/BoldTwilight.fnt"
+dest_files=["res://.godot/imported/BoldTwilight.fnt-985a6d32520d2e0391840f57b30985a6.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

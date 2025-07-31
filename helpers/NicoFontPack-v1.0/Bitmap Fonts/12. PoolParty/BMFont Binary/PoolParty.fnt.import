@@ -1,0 +1,16 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://bo3u3hk0rabnj"
+valid=false
+
+[deps]
+
+source_file="res://helpers/NicoFontPack-v1.0/Bitmap Fonts/12. PoolParty/BMFont Binary/PoolParty.fnt"
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

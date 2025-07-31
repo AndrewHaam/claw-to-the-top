@@ -1,0 +1,16 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://c711di2oq0rnw"
+valid=false
+
+[deps]
+
+source_file="res://helpers/NicoFontPack-v1.0/Bitmap Fonts/11. IndigoPaint/BMFont Text/IndigoPaint.fnt"
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

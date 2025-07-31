@@ -1,3 +1,6 @@
+class_name PlayerCat
+
+
 extends CharacterBody2D
 
 @export var max_time_held : float
@@ -13,6 +16,7 @@ extends CharacterBody2D
 signal change_camera_pos
 
 @onready var anim = $AnimatedSprite2D
+@onready var stopwatch = get_node("/root/Stopwatch")
 @onready var jump_height : float = min_jump_height
 @onready var jump_velocity : float = ((2.0 * jump_height) / jump_time_to_peak) * -1.0
 @onready var jump_gravity : float = ((2.0 * jump_height) / (jump_time_to_peak * jump_time_to_peak))
@@ -31,12 +35,30 @@ var fall_played = false
 var squat_played = false
 var can_move := true
 
-func _unhandled_input(_event: InputEvent) -> void:
+func _ready():
+	position = SaveManager.load_player_position()
+	#stopwatch.time = SaveManager.load_stopwatch_time()
+	print("Loaded position:", position)
+	#print("Loaded stopwatch time:", stopwatch.time)
+
+
+func _unhandled_input(event):
+	if event.is_action_pressed("save"):
+		print("Save action triggered")
+		if stopwatch:
+			SaveManager.save_game(position, stopwatch.time)
+			print("Game saved at position: ", position)
 	if Input.is_action_just_pressed("interact"):
 		var actionables = actionable_finder.get_overlapping_areas()
 		if actionables.size() > 0:
-			actionables[0].action()
-			return
+			var target = actionables[0]
+			target.action()
+
+			# Hide the label if the target has the method
+			if target.has_method("hide_interact_label"):
+				target.hide_interact_label()
+
+
 
 func modified_get_gravity() -> Vector2:
 	if velocity.y < 0:
@@ -99,18 +121,13 @@ func get_jump_height(delta):
 		jump_velocity = ((2.0 * jump_height) / jump_time_to_peak)
 
 func move_camera_to_match_player(): 
-	#print("camera_limit_lower: ", camera_limit_lower, " | camera_limit_upper: ", camera_limit_upper)
 	if position.y < camera_limit_upper:
-		print(position.y)
 		camera_limit_lower -= camera_height
 		camera_limit_upper -= camera_height
-		print("camera_limit_lower: ", camera_limit_lower, " | camera_limit_upper: ", camera_limit_upper)
 		change_camera_pos.emit(-camera_height)
-	
 	elif position.y > camera_limit_lower:
 		camera_limit_lower += camera_height
 		camera_limit_upper += camera_height
-		print("camera_limit_lower: ", camera_limit_lower, " | camera_limit_upper: ", camera_limit_upper)
 		change_camera_pos.emit(+camera_height)
 		
 func _physics_process(delta: float) -> void:
@@ -137,7 +154,6 @@ func _physics_process(delta: float) -> void:
 
 	move_camera_to_match_player()
 	move_and_slide()
-
 
 func _on_change_camera_pos() -> void:
 	pass # Replace with function body.

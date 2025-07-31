@@ -1,0 +1,16 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://vswmfdi5pk6t"
+valid=false
+
+[deps]
+
+source_file="res://helpers/NicoFontPack-v1.0/Bitmap Fonts/10. CakeIcing/BMFont Text/CakeIcing.fnt"
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

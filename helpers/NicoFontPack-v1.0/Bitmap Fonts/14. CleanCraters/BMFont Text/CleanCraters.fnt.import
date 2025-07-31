@@ -1,0 +1,16 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://8s421i0arkjy"
+valid=false
+
+[deps]
+
+source_file="res://helpers/NicoFontPack-v1.0/Bitmap Fonts/14. CleanCraters/BMFont Text/CleanCraters.fnt"
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2
