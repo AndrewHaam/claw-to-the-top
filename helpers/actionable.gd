@@ -5,6 +5,7 @@ extends Area2D
 
 signal dialogue_finished
 signal dialogue_started
+
 func action() -> void:
 	dialogue_started.emit()
 	var dialog = DialogueManager. show_example_dialogue_balloon(dialogue_resource, dialogue_start)
