@@ -26,7 +26,6 @@
 [ext_resource type="Texture2D" uid="uid://b66yxpmgexu04" path="res://background/free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 4/2.png" id="22_eja3j"]
 [ext_resource type="Texture2D" uid="uid://cwmbwder3wua5" path="res://background/free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 4/3.png" id="23_ffbh0"]
 [ext_resource type="Texture2D" uid="uid://nvbru28oh5un" path="res://background/free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 4/4.png" id="24_4xikj"]
-[ext_resource type="PackedScene" uid="uid://wtluu8cmciag" path="res://scenes/player_cat.tscn" id="27_1id6s"]
 [ext_resource type="Texture2D" uid="uid://bnjtqvr7mdfx5" path="res://sprites/craftpix-net-654794-dump-2d-tileset-pixel-art/1 Tiles/Tileset.png" id="28_sb86i"]
 [ext_resource type="Texture2D" uid="uid://c0lhqm7dn6gm8" path="res://background/New free backgrounds part1/background 3/1.png" id="28_t3aa1"]
 [ext_resource type="Texture2D" uid="uid://c2q1q4cpowjkh" path="res://sprites/mp_house_interiors_tileset_pack/bathroom.png" id="28_vqgmh"]
@@ -52,8 +51,9 @@
 [ext_resource type="Texture2D" uid="uid://qyopys8lig45" path="res://background/New free backgrounds part1/background 2/3.png" id="50_wnql7"]
 [ext_resource type="Texture2D" uid="uid://bjaguwete3rtp" path="res://background/free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 2/3.png" id="51_lqttq"]
 [ext_resource type="Texture2D" uid="uid://cc4oqq31hesxg" path="res://background/free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 2/4.png" id="52_cbm6e"]
-[ext_resource type="PackedScene" path="res://helpers/stopwatch.tscn" id="53_sjlp6"]
+[ext_resource type="PackedScene" uid="uid://rq3en1sx0qi8" path="res://helpers/stopwatch.tscn" id="53_sjlp6"]
 [ext_resource type="PackedScene" uid="uid://xejg0auvh1cb" path="res://helpers/hud.tscn" id="54_r41xx"]
+[ext_resource type="PackedScene" uid="uid://wqhji65f8p5h" path="res://tuna.tscn" id="55_r41xx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p1akp"]
 texture = ExtResource("28_sb86i")
@@ -5638,10 +5638,6 @@ position = Vector2(1, -3746)
 rotation = 3.14159
 texture = ExtResource("20_umuqj")
 
-[node name="PlayerCat" parent="." instance=ExtResource("27_1id6s")]
-z_index = 100
-position = Vector2(164, 482)
-
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 z_index = 2
 position = Vector2(1, 0)
@@ -5802,8 +5798,8 @@ shape = SubResource("WorldBoundaryShape2D_lqttq")
 
 [node name="Hud" parent="CanvasLayer2" instance=ExtResource("54_r41xx")]
 
-[connection signal="change_camera_pos" from="PlayerCat" to="." method="_on_player_cat_change_camera_pos"]
-[connection signal="dialogue_finished" from="KingKitty/Actionable" to="PlayerCat" method="_on_actionable_dialogue_finished"]
+[node name="Tuna" parent="." instance=ExtResource("55_r41xx")]
+position = Vector2(-85, 269)
+
 [connection signal="dialogue_finished" from="KingKitty/Actionable" to="Stopwatch" method="_on_actionable_dialogue_finished"]
-[connection signal="dialogue_started" from="KingKitty/Actionable" to="PlayerCat" method="_on_actionable_dialogue_started"]
 [connection signal="dialogue_started" from="KingKitty/Actionable" to="Stopwatch" method="_on_actionable_dialogue_started"]

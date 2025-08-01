@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://wqhji65f8p5h"]
+
+[ext_resource type="Texture2D" uid="uid://cf2bkx30d5618" path="res://sprites/tuna_can.png" id="1_1vnad"]
+[ext_resource type="Script" uid="uid://cxr6rk0gw57fk" path="res://tuna.gd" id="1_fveot"]
+[ext_resource type="FontFile" uid="uid://cpouwidn7thhi" path="res://helpers/NicoFontPack-v1.0/Base Font Files/NicoBold/NicoBold-Regular.ttf" id="2_fveot"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xedlk"]
+radius = 130.035
+
+[node name="Tuna" type="Node2D"]
+script = ExtResource("1_fveot")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1vnad")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_xedlk")
+
+[node name="InteractLabel" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -140.0
+offset_top = -43.0
+offset_right = 141.0
+offset_bottom = -20.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_fveot")
+text = "[Press E to become the new King]"

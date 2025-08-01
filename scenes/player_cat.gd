@@ -48,15 +48,23 @@ func _unhandled_input(event):
 		if stopwatch:
 			SaveManager.save_game(position, stopwatch.time)
 			print("Game saved at position: ", position)
+	if Input.is_action_just_pressed("win"):
+		var actionables = actionable_finder.get_overlapping_areas()
+		if actionables.size() > 0:
+			print("fart tuah")
+			get_tree().change_scene_to_file("res://scenes/Credits.tscn")
 	if Input.is_action_just_pressed("interact"):
 		var actionables = actionable_finder.get_overlapping_areas()
 		if actionables.size() > 0:
+			print("joe mama")
 			var target = actionables[0]
 			target.action()
 
 			# Hide the label if the target has the method
 			if target.has_method("hide_interact_label"):
 				target.hide_interact_label()
+			#if target.has_signal("tuna_interacted"):
+				#target.connect("tuna_interacted", Callable(self, "on_tuna_interacted"))
 
 
 
@@ -165,3 +173,6 @@ func _on_actionable_dialogue_finished() -> void:
 
 func _on_actionable_dialogue_started() -> void:
 	can_move = false
+
+func on_tuna_interacted():
+	get_tree().change_scene_to_file("res://scenes/Credits.tscn")

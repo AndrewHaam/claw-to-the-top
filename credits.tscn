@@ -1,0 +1,125 @@
+[gd_scene load_steps=5 format=3 uid="uid://cp6q6nyinw33c"]
+
+[ext_resource type="FontFile" uid="uid://cpouwidn7thhi" path="res://helpers/NicoFontPack-v1.0/Base Font Files/NicoBold/NicoBold-Regular.ttf" id="1_nm7lk"]
+
+[sub_resource type="Animation" id="Animation_c1t8d"]
+resource_name = "scroll"
+length = 60.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 60),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 660), Vector2(0, -1250)]
+}
+
+[sub_resource type="Animation" id="Animation_g4wvt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 660)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pjc1l"]
+_data = {
+&"RESET": SubResource("Animation_g4wvt"),
+&"scroll": SubResource("Animation_c1t8d")
+}
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_top = -10.325
+offset_right = 1151.0
+offset_bottom = 1240.68
+theme_override_fonts/font = ExtResource("1_nm7lk")
+text = "You didn’t just play a game.
+
+You climbed the tower of junk right alongside us, fall after fall, overcoming difficulty and failure.
+
+You proved there’s beauty in the discarded. That even in a world built from scraps, something whole can rise.
+
+Thank you for believing this game was worth climbing for.
+
+=============================
+Claw to the Top
+     Created by Andrew, Brian, and Jerry
+==============================
+
+GAME DESIGN
+Brian Vuong
+Jeonghyeon Andrew Haam
+Jerry Zhou
+
+PROGRAMMING
+Brian Vuong
+Jeonghyeon Andrew Haam
+Jerry Zhou
+
+ART & ANIMATION
+Brian Vuong
+Jeonghyeon Andrew Haam
+
+MUSIC & SOUND
+Brian Vuong
+Jeonghyeon Andrew Haam
+Jerry Zhou
+
+WRITING & DIALOGUE
+Jeonghyeon Andrew Haam
+
+PLAYTESTING
+Family and Friends
+CST
+
+SPECIAL THANKS
+to those who believed in us
+
+TOOLS USED
+Game Engine: Godot
+Art: Pixilart, Itch.io
+
+AUDIO
+“Swing Whoosh” by Jofae - CC0 v1.0 Universal
+“Chiptune Lo-fi & 8-Bit Gaming” by ChillMindScapes - CC0 v1.0 Universal
+
+ASSETS USED
+“Trash Pack” by BTL games – CC0 v1.0 Universal
+“Pixel Cats Megapack” by ToffeeCraft – CC0 v1.0 Universal
+“Pixel Mart” by ghostpixxells – CC0 v1.0 Universal
+“Free Sky Backgrounds” by Free Game Assets – CC0 v1.0 Universal
+“House Interiors Tileset Pack” by Mucho Pixels – CC0 v1.0 Universal
+“Dump 2D Tileset Pixel Art” by unnamed – CC0 v1.0 Universal
+\"Nico Fonts\" by Nico Pup - CC0 v1.0 Universal
+
+PUBLISHING
+- Steamworks (Valve)
+
+==============================
+   Thank you for playing!
+ Made with love in Seattle and Tempe
+=============================="
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_pjc1l")
+}
