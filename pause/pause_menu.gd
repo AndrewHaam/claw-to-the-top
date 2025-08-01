@@ -39,6 +39,9 @@ func _on_resume_pressed() -> void:
 
 func _on_restart_pressed() -> void:
 	resume()
+	SaveLoad._reset_save_data()
+	SaveLoad._save()
+	SaveLoad._load()
 	get_tree().reload_current_scene()
 
 func _process(_delta):

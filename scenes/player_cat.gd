@@ -30,7 +30,7 @@ var is_holding : bool = false
 var in_air: bool = false
 var time_held : float
 var direction = 0.0
-var current_direction : float = 1
+var current_direction : float
 var fall_played = false
 var squat_played = false
 var can_move := true
@@ -104,6 +104,7 @@ func get_x_movement():
 	else:
 		if velocity.x == 0:
 			current_direction *= -1
+			print("bounced")
 		velocity.x = current_direction * SPEED
 
 func get_jump_height(delta):
@@ -132,9 +133,9 @@ func move_camera_to_match_player():
 		
 func _physics_process(delta: float) -> void:
 	if not can_move:
-		anim.play("idle")
-		velocity = Vector2.ZERO
-		move_and_slide()
+		#anim.play("idle")
+		#velocity = Vector2.ZERO
+		#move_and_slide()
 		return
 
 	get_animation()
