@@ -1,9 +1,8 @@
-[gd_scene load_steps=24 format=3 uid="uid://bekfnyu6q4cra"]
+[gd_scene load_steps=23 format=3 uid="uid://bekfnyu6q4cra"]
 
 [ext_resource type="Script" uid="uid://16a81l8dw3qf" path="res://main menu/Menu.gd" id="1_06t4h"]
 [ext_resource type="Texture2D" uid="uid://leqdhrtlpg6i" path="res://main menu/ctttmenu.png" id="2_7vrkn"]
 [ext_resource type="FontFile" uid="uid://c8xyippc18q8" path="res://main menu/Dokdo-Regular.ttf" id="3_fu7sn"]
-[ext_resource type="AudioStream" uid="uid://ds8045uk33mna" path="res://sound/Chiptune Lo-fi & 8-Bit Gaming _ Playlist  #8bit   #chiptune   #chipmusic.mp3" id="4_ra13p"]
 [ext_resource type="Script" uid="uid://d3j2wdwpkmlfs" path="res://main menu/fullscreen_control.gd" id="5_45qoi"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fu7sn"]
@@ -185,11 +184,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_0o4t1")
 theme_override_styles/normal = SubResource("StyleBoxFlat_jix8l")
 text = "QUIT"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_ra13p")
-autoplay = true
-bus = &"Music"
-
 [node name="Options" type="Panel" parent="."]
 layout_mode = 2
 offset_left = 720.0
@@ -212,6 +206,7 @@ theme_override_font_sizes/font_size = 69
 text = "Options"
 
 [node name="Back" type="Button" parent="Options"]
+layout_mode = 0
 offset_left = 124.0
 offset_top = 266.0
 offset_right = 249.0
