@@ -5808,14 +5808,14 @@ shape = SubResource("WorldBoundaryShape2D_lqttq")
 [node name="Hud" parent="CanvasLayer2" instance=ExtResource("54_r41xx")]
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2(-37, 249)
+position = Vector2(-180, -4016)
 script = ExtResource("55_8bni7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_p1akp")
 
 [node name="Tuna" parent="." instance=ExtResource("55_r41xx")]
-position = Vector2(-38, 257)
+position = Vector2(-181, -4008)
 
 [connection signal="change_camera_pos" from="PlayerCat" to="." method="_on_player_cat_change_camera_pos"]
 [connection signal="dialogue_finished" from="KingKitty/Actionable" to="PlayerCat" method="_on_actionable_dialogue_finished"]
