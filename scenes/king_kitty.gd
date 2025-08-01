@@ -21,3 +21,9 @@ func _on_body_exited(body):
 	if body is PlayerCat:
 		interact_label.visible = false
 		has_interacted = false  # Reset so it can show again next time
+
+func _on_actionable_dialogue_started() -> void:
+	interact_label.visible = false
+
+func _on_actionable_dialogue_finished() -> void:
+	interact_label.visible = true
