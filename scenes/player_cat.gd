@@ -155,9 +155,6 @@ func _physics_process(delta: float) -> void:
 	move_camera_to_match_player()
 	move_and_slide()
 
-func _on_change_camera_pos() -> void:
-	pass # Replace with function body.
-
 
 func _on_actionable_dialogue_finished() -> void:
 	can_move = true # Replace with function body.
