@@ -1,18 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://dt76j7t84swv2"]
+[gd_scene load_steps=6 format=3 uid="uid://dt76j7t84swv2"]
 
 [ext_resource type="Texture2D" uid="uid://wfenqjs7mevu" path="res://sprites/tuna_can.png" id="1_1vnad"]
 [ext_resource type="Script" uid="uid://csrr5tavwdh0h" path="res://tuna.gd" id="1_fveot"]
 [ext_resource type="FontFile" uid="uid://cpouwidn7thhi" path="res://helpers/NicoFontPack-v1.0/Base Font Files/NicoBold/NicoBold-Regular.ttf" id="2_fveot"]
+[ext_resource type="Script" uid="uid://b3hvcjn78rnh" path="res://helpers/actionable.gd" id="2_xedlk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fveot"]
-radius = 84.0238
+radius = 53.1507
 
 [node name="Tuna" type="Node2D"]
 script = ExtResource("1_fveot")
 
 [node name="InteractionArea" type="Area2D" parent="."]
+script = ExtResource("2_xedlk")
+ends_game = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, -10)
 shape = SubResource("CircleShape2D_fveot")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
