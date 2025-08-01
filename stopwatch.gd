@@ -4,16 +4,16 @@ class_name Stopwatch
 var time = 0.0
 var stopped = false
 
-func _ready():
-	time = SaveManager.load_stopwatch_time()
+#func _ready():
+	#time = SaveManager.load_stopwatch_time()
 
 func _process(delta):
 	if stopped:
 		return
 	time += delta
 
-func reset():
-	time = 0.0
+#func reset():
+	#time = 0.0
 
 func time_to_string(time: float) -> String:
 	var total_seconds = int(time)
