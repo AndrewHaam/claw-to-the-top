@@ -48,7 +48,7 @@ func _process(_delta):
 	testEsc()
 
 func _on_quit_pressed() -> void:
-	get_tree().quit()
+	get_tree().change_scene_to_file("res://main menu/main_menu.tscn")
 
 
 func _on_settings_pressed() -> void:
