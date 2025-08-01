@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://vxb4lqda6aqa" path="res://pause/pause_menu.gd" id="1_8pr2g"]
 [ext_resource type="Shader" uid="uid://g8qbr5qdkp07" path="res://pause/pause_menu.gdshader" id="2_2m2aa"]
 [ext_resource type="FontFile" uid="uid://c8xyippc18q8" path="res://main menu/Dokdo-Regular.ttf" id="3_3na8v"]
-[ext_resource type="Script" path="res://main menu/fullscreen_control.gd" id="4_gdxq3"]
+[ext_resource type="Script" uid="uid://d3j2wdwpkmlfs" path="res://main menu/fullscreen_control.gd" id="4_gdxq3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p81d2"]
 shader = ExtResource("2_2m2aa")
@@ -246,7 +246,7 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("3_3na8v")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3na8v")
-text = "Quit"
+text = "Quit to Main Menu"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
