@@ -17,9 +17,3 @@ func _on_body_exited(body):
 	if body is PlayerCat:
 		interact_label.visible = false
 		has_interacted = false  # Reset so it can show again next time
-
-func action():
-	if has_interacted:
-		return
-	has_interacted = true
-	get_tree().change_scene_to_file("res://credits.tscn")
