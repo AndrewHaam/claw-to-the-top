@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dbejy863gpf6t"]
+[gd_scene load_steps=3 format=3 uid="uid://dbejy863gpf6t"]
 
 [ext_resource type="AudioStream" uid="uid://ds8045uk33mna" path="res://sound/Chiptune Lo-fi & 8-Bit Gaming _ Playlist  #8bit   #chiptune   #chipmusic.mp3" id="1_dxhws"]
+[ext_resource type="Script" uid="uid://dufdwcoc31q6w" path="res://helpers/bgm.gd" id="2_yih8g"]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D"]
 stream = ExtResource("1_dxhws")
 autoplay = true
 max_distance = 9000.0
+script = ExtResource("2_yih8g")
