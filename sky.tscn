@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=4 uid="uid://cks13syw4pyn4"]
+[gd_scene load_steps=78 format=4 uid="uid://cks13syw4pyn4"]
 
 [ext_resource type="Texture2D" uid="uid://4dh0ljxf35s4" path="res://background/free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 1/1.png" id="1_78l40"]
 [ext_resource type="Texture2D" uid="uid://cwduo4cpnrfuw" path="res://background/free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 1/3.png" id="2_3ustv"]
@@ -52,8 +52,9 @@
 [ext_resource type="Texture2D" uid="uid://qyopys8lig45" path="res://background/New free backgrounds part1/background 2/3.png" id="50_wnql7"]
 [ext_resource type="Texture2D" uid="uid://bjaguwete3rtp" path="res://background/free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 2/3.png" id="51_lqttq"]
 [ext_resource type="Texture2D" uid="uid://cc4oqq31hesxg" path="res://background/free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 2/4.png" id="52_cbm6e"]
-[ext_resource type="PackedScene" path="res://helpers/stopwatch.tscn" id="53_sjlp6"]
+[ext_resource type="PackedScene" uid="uid://rq3en1sx0qi8" path="res://helpers/stopwatch.tscn" id="53_sjlp6"]
 [ext_resource type="PackedScene" uid="uid://xejg0auvh1cb" path="res://helpers/hud.tscn" id="54_r41xx"]
+[ext_resource type="PackedScene" uid="uid://dt76j7t84swv2" path="res://tuna.tscn" id="55_r41xx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p1akp"]
 texture = ExtResource("28_sb86i")
@@ -5801,6 +5802,9 @@ shape = SubResource("WorldBoundaryShape2D_lqttq")
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
 [node name="Hud" parent="CanvasLayer2" instance=ExtResource("54_r41xx")]
+
+[node name="Tuna" parent="." instance=ExtResource("55_r41xx")]
+position = Vector2(-68, 268)
 
 [connection signal="change_camera_pos" from="PlayerCat" to="." method="_on_player_cat_change_camera_pos"]
 [connection signal="dialogue_finished" from="KingKitty/Actionable" to="PlayerCat" method="_on_actionable_dialogue_finished"]
