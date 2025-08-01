@@ -1,8 +1,10 @@
 extends Node2D
 
-const SAVE_LOCATION := "user://SaveFile.json"
+const SAVE_LOCATION := "user://SaveFile3.json"
 # Called when the node enters the scene tree for the first time.
 var contents_to_save : Dictionary = {
+	"player_velocity_x" = 0,
+	"player_current_direction" = -1,
 	"camera_position_y" = 0,
 	"camera_limit_lower" = 527,
 	"camera_limit_upper" = 196,
@@ -24,10 +26,25 @@ func _load():
 		file.close()
 	
 		var save_data = data.duplicate()
+		
+		contents_to_save.player_velocity_x = save_data.player_velocity_x
+		contents_to_save.player_current_direction = save_data.player_current_direction
 		contents_to_save.player_position_x = save_data.player_position_x
 		contents_to_save.player_position_y = save_data.player_position_y
 		contents_to_save.camera_position_y = save_data.camera_position_y
 		contents_to_save.camera_limit_lower = save_data.camera_limit_lower
 		contents_to_save.camera_limit_upper = save_data.camera_limit_upper
 		contents_to_save.stopwatch_time = save_data.stopwatch_time
-	
+		
+		
+func _reset_save_data():
+	contents_to_save = {
+		"player_velocity_x" = 0,
+		"player_current_direction" = -1,
+		"camera_position_y" = 0,
+		"camera_limit_lower" = 527,
+		"camera_limit_upper" = 196,
+		"player_position_x" = 164.0,
+		"player_position_y" = 482.0,
+		"stopwatch_time" = 0
+	}
