@@ -1,41 +1,32 @@
 extends Sprite2D
 
-
 func _ready() -> void:
+	await get_tree().process_frame
 	SaveLoad._load()
-	$PlayerCat.velocity.x = SaveLoad.contents_to_save.player_position_x
-	$PlayerCat.current_direction = SaveLoad.contents_to_save.player_current_direction
-	$PlayerCat.position.y = SaveLoad.contents_to_save.player_position_y
-	$PlayerCat.position.x = SaveLoad.contents_to_save.player_position_x
-	$Camera2D.position.y = SaveLoad.contents_to_save.camera_position_y
-	$PlayerCat.camera_limit_lower = SaveLoad.contents_to_save.camera_limit_lower
-	$PlayerCat.camera_limit_upper = SaveLoad.contents_to_save.camera_limit_upper
-	$Stopwatch.time = SaveLoad.contents_to_save.stopwatch_time
-	print("current_direction: ", SaveLoad.contents_to_save.player_current_direction)
-	print("loaded")
+	
+	if $PlayerCat:
+		$PlayerCat.velocity.x = SaveLoad.contents_to_save.player_velocity_x
+		$PlayerCat.current_direction = SaveLoad.contents_to_save.player_current_direction
+		$PlayerCat.position.y = SaveLoad.contents_to_save.player_position_y
+		$PlayerCat.position.x = SaveLoad.contents_to_save.player_position_x
+		$PlayerCat.camera_limit_lower = SaveLoad.contents_to_save.camera_limit_lower
+		$PlayerCat.camera_limit_upper = SaveLoad.contents_to_save.camera_limit_upper
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+	if $Camera2D:
+		$Camera2D.position.y = SaveLoad.contents_to_save.camera_position_y
+
+	if $Stopwatch:
+		$Stopwatch.time = SaveLoad.contents_to_save.stopwatch_time
+
 func _process(_delta: float) -> void:
-	_auto_save()
-
-func _auto_save() -> void:
 	if Input.is_action_just_pressed("esc"):
-		SaveLoad.contents_to_save.player_position_x = $PlayerCat.velocity.x
-		SaveLoad.contents_to_save.player_current_direction = $PlayerCat.current_direction
-		SaveLoad.contents_to_save.player_position_y = $PlayerCat.position.y
-		SaveLoad.contents_to_save.stopwatch_time = $Stopwatch.time
-		SaveLoad.contents_to_save.player_position_x = $PlayerCat.position.x
-		SaveLoad.contents_to_save.camera_position_y = $Camera2D.position.y
-		SaveLoad.contents_to_save.camera_limit_lower = $PlayerCat.camera_limit_lower 
-		SaveLoad.contents_to_save.camera_limit_upper = $PlayerCat.camera_limit_upper
-		print("saved")
-		SaveLoad._save()
+		SaveLoad._auto_save()
 
 func _on_player_cat_change_camera_pos(player_pos):
-	print("b4: ", $Camera2D.position.y)
-	$Camera2D.position.y += player_pos
-	print("after: ", $Camera2D.position.y)
-
+	if $Camera2D:
+		print("b4: ", $Camera2D.position.y)
+		$Camera2D.position.y += player_pos
+		print("after: ", $Camera2D.position.y)
 
 func _on_actionable_dialogue_finished() -> void:
-	pass # Replace with function body.
+	pass

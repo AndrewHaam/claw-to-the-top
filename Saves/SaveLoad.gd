@@ -1,6 +1,6 @@
 extends Node2D
 
-const SAVE_LOCATION := "user://SaveFile3.json"
+const SAVE_LOCATION := "user://SaveFile6.json"
 # Called when the node enters the scene tree for the first time.
 var contents_to_save : Dictionary = {
 	"player_velocity_x" = 0,
@@ -14,6 +14,29 @@ var contents_to_save : Dictionary = {
 }
 func _ready() -> void:
 	_load()
+
+func _auto_save():
+	var player = get_tree().get_first_node_in_group("player")
+	var camera = get_tree().get_first_node_in_group("camera")
+	var stopwatch = get_tree().get_first_node_in_group("stopwatch")
+	
+	if not player or not camera or not stopwatch:
+		#print("⚠Auto-save skipped: required nodes are missing.")
+		return
+
+	var save = SaveLoad.contents_to_save
+	save.player_velocity_x = player.velocity.x
+	save.player_current_direction = player.current_direction
+	save.player_position_x = player.position.x
+	save.player_position_y = player.position.y
+	save.camera_position_y = camera.position.y
+	save.camera_limit_lower = player.camera_limit_lower
+	save.camera_limit_upper = player.camera_limit_upper
+	save.stopwatch_time = stopwatch.time
+
+	SaveLoad._save()
+	#print("Saved (manual/ESC)")
+
 func _save():
 	var file = FileAccess.open_encrypted_with_pass(SAVE_LOCATION, FileAccess.WRITE, "9284505@h4V")
 	file.store_var(contents_to_save.duplicate())

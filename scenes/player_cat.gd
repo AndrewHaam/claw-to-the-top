@@ -36,7 +36,6 @@ var squat_played = false
 var can_move := true
 
 func _ready():
-	position = SaveManager.load_player_position()
 	#stopwatch.time = SaveManager.load_stopwatch_time()
 	print("Loaded position:", position)
 	#print("Loaded stopwatch time:", stopwatch.time)
@@ -46,7 +45,6 @@ func _unhandled_input(event):
 	if event.is_action_pressed("save"):
 		print("Save action triggered")
 		if stopwatch:
-			SaveManager.save_game(position, stopwatch.time)
 			print("Game saved at position: ", position)
 	if Input.is_action_just_pressed("interact"):
 		var actionables = actionable_finder.get_overlapping_areas()
@@ -88,9 +86,9 @@ func get_animation():
 			anim.play("fall")
 			fall_played = true
 
-	if velocity.x > 0:
+	if current_direction > 0:
 		anim.flip_h = false
-	elif velocity.x < 0:
+	elif current_direction < 0:
 		anim.flip_h = true
 
 func get_x_movement():
@@ -104,7 +102,7 @@ func get_x_movement():
 	else:
 		if velocity.x == 0:
 			current_direction *= -1
-			print("bounced")
+			#print("bounced")
 		velocity.x = current_direction * SPEED
 
 func get_jump_height(delta):

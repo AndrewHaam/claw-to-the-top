@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://vxb4lqda6aqa" path="res://pause/pause_menu.gd" id="1_8pr2g"]
 [ext_resource type="Shader" uid="uid://g8qbr5qdkp07" path="res://pause/pause_menu.gdshader" id="2_2m2aa"]
 [ext_resource type="FontFile" uid="uid://c8xyippc18q8" path="res://main menu/Dokdo-Regular.ttf" id="3_3na8v"]
-[ext_resource type="Script" uid="uid://d3j2wdwpkmlfs" path="res://main menu/fullscreen_control.gd" id="4_gdxq3"]
+[ext_resource type="Script" path="res://main menu/fullscreen_control.gd" id="4_gdxq3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p81d2"]
 shader = ExtResource("2_2m2aa")
