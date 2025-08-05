@@ -92,7 +92,13 @@ func get_animation():
 		anim.flip_h = true
 
 func get_x_movement():
-	direction = Input.get_axis("ui_left", "ui_right")
+	if Input.is_action_pressed("left"):
+		direction = -1
+	elif Input.is_action_pressed("right"):
+		direction = 1
+	else:
+		direction = 0
+	#direction = Input.get_axis("ui_left", "ui_right")
 	if is_on_floor():
 		if is_holding or direction == 0:
 			velocity.x = 0
